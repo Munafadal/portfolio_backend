@@ -11,6 +11,10 @@ import profileRouter from "./routes/profile.routes";
 const app = express();
 
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Muna Portfolio API is live 🚀");
+});
 app.use("/uploads", express.static(path.join(process.cwd(), "public", "uploads")));
 
 app.use("/api/auth", authRouter);
